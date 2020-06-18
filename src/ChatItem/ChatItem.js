@@ -72,8 +72,8 @@ export class ChatItem extends Component {
                             </div>
                             <div className="rce-citem-body--bottom-status">
                                 {
-                                    this.props.unread > 0 &&
-                                    <span>{this.props.unread}</span>
+                                    (this.props.unread > 0 || this.props.unreadMessage) &&
+                                    <span>{this.props.unread || this.props.unreadMessage}</span>
                                 }
                             </div>
                         </div>
@@ -94,6 +94,7 @@ ChatItem.defaultProps = {
     subtitle: '',
     date: new Date(),
     unread: 0,
+    unreadMessage: '',
     statusColor: null,
     statusColorType: 'badge',
     statusText: null,
