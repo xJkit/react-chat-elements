@@ -13,8 +13,9 @@ import Popup from './Popup/Popup';
 import ReplyMessage from './ReplyMessage/ReplyMessage';
 
 import { register } from 'timeago.js';
+import zh_TW from 'timeago.js/lib/lang/zh_TW';
 
-register('zh_TW');
+register('zh_TW', zh_TW);
 
 export {
     MessageBox,
