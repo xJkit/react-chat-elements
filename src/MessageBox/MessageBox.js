@@ -154,8 +154,9 @@ export class MessageBox extends Component {
                                 }
 
                                 {
-                                    this.props.type === 'photo' &&
+                                    (this.props.type === 'photo' || this.props.type === 'video') &&
                                     <PhotoMessage
+                                        isVideo={this.props.type === 'video'}
                                         onOpen={this.props.onOpen}
                                         onDownload={this.props.onDownload}
                                         onLoad={this.props.onLoad}

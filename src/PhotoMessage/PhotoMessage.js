@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './PhotoMessage.css';
 
 import FaCloudDownload from 'react-icons/lib/fa/cloud-download';
+import FaRegPlayCircle from 'react-icons/lib/fa/reg-play-circle';
 import FaError from 'react-icons/lib/fa/exclamation-triangle';
 
 const ProgressBar = require('react-progress-bar.js');
@@ -62,7 +63,7 @@ export class PhotoMessage extends Component {
                                 <button
                                     onClick={this.props.onDownload}
                                     className="rce-mbox-photo--img__block-item rce-mbox-photo--download">
-                                    <FaCloudDownload/>
+                                    {this.props.isVideo ? <FaCloudDownload/> : <FaRegPlayCircle />}
                                 </button>
                             }
                             {
@@ -95,6 +96,7 @@ PhotoMessage.defaultProps = {
     onOpen: null,
     onLoad: null,
     onPhotoError: null,
+    isVideo: false,
 };
 
 

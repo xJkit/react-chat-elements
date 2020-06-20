@@ -59,6 +59,7 @@
     "start": "nwb serve-react-app ./example/index.js",
     "start:native": "node node_modules/react-native/local-cli/cli.js start",
     "build": "webpack --progress --profile --colors",
+    "postbuild": "rm -rf node_modules",
     "test": "react-scripts test --env=jsdom",
     "test:coverage": "npm run test -- --coverage --collectCoverageFrom=src/**/*.js --collectCoverageFrom=!src/index.js"
   },
