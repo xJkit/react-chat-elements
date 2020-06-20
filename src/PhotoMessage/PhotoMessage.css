@@ -43,16 +43,15 @@
     height: 100px;
 }
 
-.rce-mbox-photo--download {
+.rce-mbox-photo--download, .rce-mbox-photo--video {
     color: #efe;
     display: flex;
     justify-content: center;
+    align-items: center;
     background: none;
     border: none;
     font-size: 3.2em;
     outline: none;
-    border: 1px solid #eee;
-    border-radius: 100%;
     height: 100px;
     width: 100px;
 }
@@ -62,6 +61,14 @@
 }
 
 .rce-mbox-photo--download:active {
+    opacity: .3;
+}
+
+.rce-mbox-photo--video:hover {
+    opacity: .7;
+}
+
+.rce-mbox-photo--video:active {
     opacity: .3;
 }
 

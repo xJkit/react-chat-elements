@@ -59,7 +59,7 @@ export class PhotoMessage extends Component {
                         !this.props.data.status.download &&
                         <div className="rce-mbox-photo--img__block">
                             {
-                                !this.props.data.status.click &&
+                                !this.props.data.status.click && !this.props.data.status.play &&
                                 <button
                                     onClick={this.props.onDownload}
                                     className="rce-mbox-photo--img__block-item rce-mbox-photo--download">
@@ -70,7 +70,7 @@ export class PhotoMessage extends Component {
                                 this.props.data.status.play &&
                                 <button
                                     onClick={this.props.onDownload}
-                                    className="rce-mbox-photo--img__block-item rce-mbox-photo--download rce-mbox-video">
+                                    className="rce-mbox-photo--img__block-item rce-mbox-photo--video">
                                     <FaPlayCircleO />
                                 </button>
                             }
