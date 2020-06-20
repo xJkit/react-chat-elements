@@ -44,7 +44,7 @@ export class MessageBox extends Component {
 
         const dateText = this.props.date && !isNaN(this.props.date) && (
             this.props.dateString ||
-            format(this.props.date)
+            format(this.props.date, this.props.timeFormatLocale)
         );
 
         return (
@@ -200,7 +200,7 @@ export class MessageBox extends Component {
                                         !isNaN(this.props.date) &&
                                         (
                                             this.props.dateString ||
-                                            format(this.props.date)
+                                            format(this.props.date, this.props.timeFormatLocale)
                                         )
                                     }
                                     {
@@ -284,6 +284,7 @@ MessageBox.defaultProps = {
     forwarded: false,
     reply: false,
     status: null,
+    timeFormatLocale: 'en_US', // [doc] https://github.com/hustcc/timeago.js/tree/master/src/lang
     dateString: null,
     notch: true,
     avatar: null,
