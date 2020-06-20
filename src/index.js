@@ -12,6 +12,9 @@ import SideBar from './SideBar/SideBar';
 import Popup from './Popup/Popup';
 import ReplyMessage from './ReplyMessage/ReplyMessage';
 
+import { register } from 'timeago.js';
+
+register('zh_TW');
 
 export {
     MessageBox,
