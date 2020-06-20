@@ -153,6 +153,7 @@ export class MessageList extends Component {
                             <MessageBox
                                 key={i}
                                 {...x}
+                                timeFormatLocale={this.props.timeFormatLocale}
                                 onOpen={this.props.onOpen && ((e) => this.onOpen(x, i, e))}
                                 onPhotoError={this.props.onPhotoError && ((e) => this.onPhotoError(x, i, e))}
                                 onDownload={this.props.onDownload && ((e) => this.onDownload(x, i, e))}
@@ -204,6 +205,7 @@ MessageList.defaultProps = {
     toBottomHeight: 300,
     downButton: true,
     downButtonBadge: null,
+    timeFormatLocale: 'en_US', // https://github.com/hustcc/timeago.js/tree/master/src/lang
 };
 
 export default MessageList;
