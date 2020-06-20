@@ -1,4 +1,5 @@
 import React, { Component, } from 'react';
+import { LocaleContext } from '../TimeagoProvider';
 import './MessageList.css';
 
 import MessageBox from '../MessageBox/MessageBox';
@@ -8,7 +9,7 @@ import FaChevronDown from 'react-icons/lib/fa/chevron-down';
 const classNames = require('classnames');
 
 export class MessageList extends Component {
-
+    static contextType = LocaleContext;
     constructor(props) {
         super(props);
         this.state = {
@@ -141,6 +142,7 @@ export class MessageList extends Component {
     }
 
     render() {
+        const timeagoLocale = this.context;
         return (
             <div
                 className={classNames(['rce-container-mlist', this.props.className])}>
@@ -153,7 +155,7 @@ export class MessageList extends Component {
                             <MessageBox
                                 key={i}
                                 {...x}
-                                timeFormatLocale={this.props.timeFormatLocale}
+                                timeagoLocale={timeagoLocale}
                                 onOpen={this.props.onOpen && ((e) => this.onOpen(x, i, e))}
                                 onPhotoError={this.props.onPhotoError && ((e) => this.onPhotoError(x, i, e))}
                                 onDownload={this.props.onDownload && ((e) => this.onDownload(x, i, e))}
@@ -205,7 +207,6 @@ MessageList.defaultProps = {
     toBottomHeight: 300,
     downButton: true,
     downButtonBadge: null,
-    timeFormatLocale: 'en_US', // https://github.com/hustcc/timeago.js/tree/master/src/lang
 };
 
 export default MessageList;

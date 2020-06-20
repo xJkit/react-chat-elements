@@ -20,10 +20,6 @@ import FaClose from 'react-icons/lib/fa/close';
 import FaMenu from 'react-icons/lib/md/more-vert';
 import FaSquare from 'react-icons/lib/md/crop-square';
 
-import {
-    format,
-} from 'timeago.js';
-
 import loremIpsum from 'lorem-ipsum';
 import Identicon from 'identicon.js';
 

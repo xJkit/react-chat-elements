@@ -11,13 +11,10 @@ import Dropdown from './Dropdown/Dropdown';
 import SideBar from './SideBar/SideBar';
 import Popup from './Popup/Popup';
 import ReplyMessage from './ReplyMessage/ReplyMessage';
-
-import { register } from 'timeago.js';
-import zh_TW from 'timeago.js/lib/lang/zh_TW';
-
-register('zh_TW', zh_TW);
+import TimeagoProvider from './TimeagoProvider';
 
 export {
+    TimeagoProvider,
     MessageBox,
     ChatItem,
     SystemMessage,

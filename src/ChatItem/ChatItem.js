@@ -60,7 +60,7 @@ export class ChatItem extends Component {
                                     !isNaN(this.props.date) &&
                                     (
                                         this.props.dateString ||
-                                        format(this.props.date)
+                                        format(this.props.date, this.props.timeagoLocale)
                                     )
                                 }
                             </div>
@@ -100,6 +100,7 @@ ChatItem.defaultProps = {
     statusText: null,
     dateString: null,
     lazyLoadingImage: undefined,
+    timeagoLocale: 'zh_TW',
     onAvatarError: () => void(0),
 }
 

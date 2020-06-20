@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { LocaleContext } from '../TimeagoProvider';
 import './ChatList.css';
 
 import ChatItem from '../ChatItem/ChatItem';
@@ -6,7 +7,7 @@ import ChatItem from '../ChatItem/ChatItem';
 const classNames = require('classnames');
 
 export class ChatList extends Component {
-
+    static contextType = LocaleContext;
     onClick(item, i, e) {
         if (this.props.onClick instanceof Function)
             this.props.onClick(item, i, e);
@@ -24,6 +25,7 @@ export class ChatList extends Component {
     }
 
     render() {
+        const timeagoLocale = this.context;
         return (
             <div
                 ref={this.props.cmpRef}
@@ -35,6 +37,7 @@ export class ChatList extends Component {
                             key={i}
                             lazyLoadingImage={this.props.lazyLoadingImage}
                             {...x}
+                            timeagoLocale={timeagoLocale}
                             onAvatarError={(e) => this.onAvatarError(x,i,e)}
                             onContextMenu={(e) => this.onContextMenu(x,i,e)}
                             onClick={() => this.onClick(x, i)}/>
